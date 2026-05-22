@@ -1,0 +1,42 @@
+/* ===== PORTFOLIO SECTION ===== */
+
+.portfolio {
+  color: #554a43; /* 🔹 базовый цвет текста */
+}
+
+/* ===== CONTAINER ===== */
+
+.portfolio-container {
+  display: flex; /* 🔹 flex-контейнер */
+  flex-direction: column; /* 🔹 элементы сверху вниз */
+  gap: 72px; /* 🔹 расстояние между блоками */
+  justify-content: center; /* 🔹 центрирование */
+}
+
+/* ===== LIST (GRID через flex) ===== */
+
+.portfolio-list {
+  margin: 0; /* 🔹 убрать отступ */
+  display: flex; /* 🔹 в ряд */
+  flex-wrap: wrap; /* 🔹 перенос строк */
+  gap: 48px 24px; /* 🔹 вертикаль / горизонталь */
+}
+
+/* ===== CARD IMAGE ===== */
+
+.portfolio-card-img {
+  display: block; /* 🔹 убирает нижний зазор */
+}
+
+/* ===== CARD CONTENT ===== */
+
+.portfolio-card-content {
+  display: flex; /* 🔹 flex внутри карточки */
+  flex-direction: column; /* 🔹 текст сверху вниз */
+  gap: 8px; /* 🔹 расстояние между текстом */
+  padding: 32px 16px; /* 🔹 внутренние отступы */
+
+  border-bottom: 1px solid #e7e9fc; /* 🔹 рамка снизу */
+  border-left: 1px solid #e7e9fc; /* 🔹 рамка слева */
+  border-right: 1px solid #e7e9fc; /* 🔹 рамка справа */
+}

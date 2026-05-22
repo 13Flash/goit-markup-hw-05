@@ -1,0 +1,86 @@
+.footer {
+  background-color: #2e2f42; /* тёмный фон */
+  color: #ffffff;
+  padding: 100px 0; /* отступ сверху и снизу */
+}
+
+/* 2 колонки: left + right */
+.footer-container {
+  display: flex;
+  gap: 120px;              /* расстояние между колонками */
+  align-items: flex-start; /* выравнивание по верху */
+}
+
+/* LEFT колонка (WebStudio + текст) */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;               /* расстояние между логотипом и текстом */
+  align-items: flex-start;
+}
+
+/* RIGHT колонка (Social + иконки) */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;               /* расстояние между заголовком и иконками */
+  align-items: flex-start;
+}
+
+/* текст в футере */
+.footer-text {
+  max-width: 264px;
+  margin: 0;
+  color: #f4f4fd;
+  line-height: 1.5;
+}
+
+/* логотип */
+.footer-logo {
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  color: #f4f4fd;
+  text-decoration: none;
+}
+
+.footer-logo .logo-accent {
+  color: #4d5ae5;
+}
+
+/* заголовок Social media */
+.footer-social-title {
+  margin: 0;
+}
+
+/* список иконок */
+.footer-social-list {
+  display: flex;
+  gap: 16px;              /* расстояние между кружками */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* кружки */
+.footer-social-link {
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 250ms;
+}
+
+/* hover эффект */
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: #31d0aa;
+}
+
+/* иконки */
+.footer-social-icon {
+  fill: #f4f4fd;
+}

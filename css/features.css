@@ -1,0 +1,52 @@
+.features-section {
+  background-color: #ffffff; /* 🔹 белый фон секции */
+  padding-top: 120px; /* 🔹 отступ сверху внутри секции */
+  padding-bottom: 120px; /* 🔹 отступ снизу внутри секции */
+}
+
+.block-title {
+  margin-bottom: 8px; /* 🔹 расстояние между заголовком и текстом */
+}
+
+.block-text {
+  color: #434455; /* 🔹 серый цвет текста */
+}
+
+.features-list {
+  display: flex; /* 🔹 делает элементы в одну линию */
+  gap: 24px; /* 🔹 расстояние между элементами */
+}
+
+.features-item {
+  width: calc((100% - 72px) / 4); /* 🔹 4 колонки с учётом отступов */
+}
+.features-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 112px;
+  background-color: #f4f4fd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  border: 1px solid #8e8f99;
+}
+
+.features-item {
+  width: calc((100% - 72px) / 4);
+}
+
+.features-subtitle {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  margin-bottom: 8px;
+}
+
+.features-desc {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #434455;
+}
