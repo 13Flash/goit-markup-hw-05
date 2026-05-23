@@ -1,123 +1,72 @@
-# 📘 Модуль 4.1: Декоративні елементи
+# 👩‍🏫 Заняття 9: Форми і таблиці
 
-## 🗂 План заняття
-
-- 🖼 Контентні та декоративні зображення  
-- 🎨 Властивості: `background-color`, `background-image`, `background-repeat`, `background-position`, `background-size`  
-- 🧅 Багатошаровий фон  
-- 🌈 Градієнти: лінійний, радіальний  
-- 🕶 CSS-тіні та властивість `box-shadow`  
-- 📐 Векторна графіка (SVG)  
-- ✏️ Основи SVG-фігур  
-- 🧩 Способи використання SVG  
-- 🧰 Створення та робота з SVG-спрайтом  
-- 🧙‍♀️ Псевдоелементи `::before` та `::after`  
+## 🎯 Ціль заняття
+- Ознайомитись з основними HTML-тегами для створення форм
+- Розібрати атрибути форм та їх поведінку
+- Навчитись працювати з валідацією та псевдокласами
+- Продовжити роботу над проєктом, додавши форми
 
 ---
 
-## 🖼 Властивість `background-image`
-
-### 🔁 background-repeat
-
-- `repeat` — повторювати X і Y. Значення за замовчуванням.  
-- `repeat-x` — повторювати тільки X (горизонтально).  
-- `repeat-y` — повторювати тільки Y (вертикально).  
-- `no-repeat` — не повторювати.
-
-### 📍 background-position
-
-- `x y`  
-- `50% 50%`  
-- `100px 200px`  
-- `right bottom`  
-- `left top`
-
-### 📏 background-size
-
-- `auto auto`  
-- `200px`  
-- `200px 300px`  
-- `cover` — масштабувати, щоб покрити весь елемент  
-- `contain` — масштабувати, щоб вмістити зображення всередину елемента
-
-### 📏 background-origin | background-clip
-
-- `content-box`
-- `border-box`
-- `padding-box`
+## 📌 1. Вступ
+**Що розглянемо:**
+- Теги `form`, `label`, `input`, `textarea`, `select`, `fieldset`, `optgroup`, `datalist`
+- Атрибути: `type`, `name`, `placeholder`, `checked`, `required`, `disabled`, `autofocus`, `minLength`, `maxLength`, `step`, `value`, `min`, `max`
+- Псевдокласи: `:focus-within`, `:placeholder-shown`, `:checked`
+- Стилизування `textarea` — властивість `resize`
 
 ---
 
-## 🧅 Багатошаровий фон
-
-Приклад:  
-`background-image: url(шлях до зображення 1), url(шлях до зображення 2);`
+## 🙋‍♂️ 2. Відповіді на питання студентів
+(з файлу питань — буде заповнюватись на уроці)
 
 ---
 
-## 🌈 Градієнти
+## 🧩 3. Продовження проєкта
 
-### 🔄 Лінійний градієнт
-
-Синтаксис:  
-`background-image: linear-gradient(<напрямок>, <колір-1>, <колір-2>, ...)`
-
-Приклад з фоном:  
-`background-image: linear-gradient(to top, rgba(17, 17, 17, 0.4), rgba(17, 17, 17, 0.4)), url("path_to_image");`
-
-### 🎯 Радіальний градієнт
-
-Приклад:  
-`background-image: radial-gradient(rgba(17, 17, 17, 0.3), rgba(17, 17, 17, 1)), url("path_to_image");`
-
----
-
-## 🧰 background (скорочена форма)
-
-Приклад:  
-`background: url(шлях до зображення) repeat-x;`
+### 📄 Базові теги форм:
+| Тег       | Призначення |
+|-----------|-------------|
+| `<form>`        | Контейнер для форми |
+| `<label>`       | Підпис до елемента форми |
+| `<input>`       | Поле вводу (вказується тип через `type`) |
+| `<textarea>`    | Багаторядкове текстове поле |
+| `<select>`      | Випадаючий список |
+| `<optgroup>`    | Група опцій у `<select>` |
+| `<datalist>`    | Варіанти підказок до `<input>` |
+| `<fieldset>`    | Групування пов’язаних елементів форми |
 
 ---
 
-## 🕶 Властивість `box-shadow`
-
-Синтаксис:  
-`box-shadow: <x-offset> <y-offset> <blur> <spread> <color>;`
-
-Можна додати `inset` для внутрішньої тіні:  
-`box-shadow: inset <x-offset> <y-offset> <blur> <spread> <color>;`
-
-### 🔳 Багатошарова тінь
-
-Приклад:  
-`box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 6px 20px rgba(0, 0, 0, 0.1);`
-
-🔗 Приклади: [getcssscan.com/css-box-shadow-examples](https://getcssscan.com/css-box-shadow-examples)
+### ⚙️ Важливі атрибути `input`:
+| Атрибут       | Пояснення |
+|---------------|-----------|
+| `type`        | Тип поля (див. нижче) |
+| `name`        | Ім’я поля (важливо для обробки даних) |
+| `placeholder` | Підказка у полі |
+| `checked`     | Встановлює обране значення (для `checkbox`, `radio`) |
+| `required`    | Поле обов’язкове для заповнення |
+| `disabled`    | Поле вимкнене |
+| `autofocus`   | Фокус при завантаженні сторінки |
+| `min`, `max`, `step`, `value` | Для числових полів |
+| `minLength`, `maxLength` | Для текстових/парольних полів |
 
 ---
 
-## 📐 Векторна графіка
+### ⌨️ Типи `input`:
+```html
+<input type="text">
+<input type="email">
+<input type="checkbox" checked>
+<input type="radio" name="choice">
+<input type="number" value="0" min="18" max="120" step="0.5">
+<input type="date">
+<input type="time">
+<input type="datetime-local">
+<input type="tel">
+<input type="password" minLength="6" maxLength="20">
+```
+## 🔹 Додаткові ресурси 📚
+- 🖼 [dashly-theme](https://dashly-theme.com/account.html) – приклад використання форм  
+- 🖼 [ant.design](https://ant.design/components/overview/) – одна з популярних js бібліотек з різними компонентами  
 
-- Вбудований SVG (`inline`)
-- Властивість `fill` — визначає колір заливки
-- Властивість `stroke` — визначає колір рамок
-
----
-
-## 🧰 SVG-спрайт
-
-- Генерація через: [icomoon.io/app](https://icomoon.io/app/)
-- Оптимізація SVG: [svgomg.net](https://codebeautify.org/svg-formatter-beautifier#)
-
--   `<svg class="class-name" width="24" height="24">`
-        `<use href="./sprite.svg#icon-instagram"></use>`
-    `</svg>`
-
----
-
-## 🧙‍♀️ Псевдоелементи
-
-Використання:  
-`.box::before`, `.box::after`, `.box:hover::before`
-
----

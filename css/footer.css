@@ -1,68 +1,75 @@
-.footer {
-  background-color: #2e2f42; /* тёмный фон */
+footer {
+  background-color: #2e2f42; /* 🔹 тёмный фон */
   color: #ffffff;
-  padding: 100px 0; /* отступ сверху и снизу */
+  padding: 100px 0; /* 🔹 отступ сверху/снизу */
 }
 
-/* 2 колонки: left + right */
+/* ===== LAYOUT ===== */
 .footer-container {
-  display: flex;
-  gap: 120px;              /* расстояние между колонками */
-  align-items: flex-start; /* выравнивание по верху */
+  display: flex; /* 🔹 3 колонки */
+  align-items: flex-start; /* 🔹 сверху */
+  gap: 120px; /* 🔹 расстояние между блоками */
 }
 
-/* LEFT колонка (WebStudio + текст) */
 .footer-left {
   display: flex;
-  flex-direction: column;
-  gap: 16px;               /* расстояние между логотипом и текстом */
+  flex-direction: column; /* 🔹 логотип + текст */
+  gap: 16px;
   align-items: flex-start;
 }
 
-/* RIGHT колонка (Social + иконки) */
 .footer-social {
   display: flex;
-  flex-direction: column;
-  gap: 16px;               /* расстояние между заголовком и иконками */
+  flex-direction: column; /* 🔹 соцсети */
+  gap: 16px;
   align-items: flex-start;
+  margin-right: 83px; /* 🔹 отступ блока */
 }
 
-/* текст в футере */
-.footer-text {
-  max-width: 264px;
-  margin: 0;
-  color: #f4f4fd;
-  line-height: 1.5;
-}
-
-/* логотип */
+/* ===== LOGO ===== */
 .footer-logo {
-  font-weight: 700;
+  display: inline-block;
   font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #f4f4fd;
   text-decoration: none;
 }
 
 .footer-logo .logo-accent {
-  color: #4d5ae5;
+  color: #4d5ae5; /* 🔹 акцент */
 }
 
-/* заголовок Social media */
-.footer-social-title {
+/* ===== TEXT ===== */
+.footer-text {
+  max-width: 264px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
   margin: 0;
 }
 
-/* список иконок */
+/* ===== SOCIAL ===== */
+.footer-social-title,
+.subscribe-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
 .footer-social-list {
   display: flex;
-  gap: 16px;              /* расстояние между кружками */
+  gap: 16px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* кружки */
 .footer-social-link {
   width: 40px;
   height: 40px;
@@ -71,16 +78,78 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 250ms;
+  transition: background-color 250ms;
 }
 
-/* hover эффект */
 .footer-social-link:hover,
 .footer-social-link:focus {
   background-color: #31d0aa;
 }
 
-/* иконки */
 .footer-social-icon {
   fill: #f4f4fd;
+}
+
+/* ===== SUBSCRIBE ===== */
+.subscribe-form {
+  display: flex;
+  gap: 24px;
+}
+
+.subscribe-input {
+  width: 264px;
+  height: 40px;
+  padding-left: 16px;
+
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+
+  outline: transparent;
+  transition: border-color 250ms;
+}
+
+.subscribe-input:focus {
+  border-color: #31d0aa;
+}
+
+.subscribe-input::placeholder {
+  color: #ffffff;
+}
+
+.subscribe-btn {
+  min-width: 165px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+
+  background-color: #4d5ae5;
+  border: none;
+  border-radius: 4px;
+
+  cursor: pointer;
+  transition: background-color 250ms;
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background-color: #31d0aa;
+}
+
+.subscribe-icon {
+  margin-left: 16px;
+  fill: #ffffff;
+
 }
