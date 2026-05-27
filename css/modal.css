@@ -30,7 +30,7 @@
   padding-block: 72px 24px; /* вертикальні відступи */
   padding-inline: 24px; /* горизонтальні відступи */
 
-  min-width: 408px; /* мін ширина */
+  max-width: 408px; /* макс ширина */
   min-height: 584px; /* мін висота */
 
   background: #fcfcfc; /* фон модалки */

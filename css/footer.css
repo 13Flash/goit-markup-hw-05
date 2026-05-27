@@ -8,8 +8,8 @@
 .footer-container {
   display: flex; /* розміщує 3 блоки в ряд */
   align-items: flex-start; /* вирівнювання по верхньому краю */
-  justify-content: space-between; /* розкидає блоки по ширині */
-}
+
+} 
 
 /* ===== ЛІВИЙ БЛОК ===== */
 .footer-left {
@@ -17,6 +17,7 @@
   flex-direction: column; /* елементи один під одним */
   gap: 16px; /* відстань між логотипом і текстом */
   align-items: flex-start; /* вирівнювання по лівому краю */
+  margin-right: 120px;
 }
 
 /* ===== ЛОГОТИП ===== */
@@ -52,6 +53,7 @@
   flex-direction: column; /* елементи в стовпчик */
   gap: 16px; /* відступи між елементами */
   align-items: flex-start; /* вирівнювання зліва */
+  margin-right: 83px;
 }
 
 /* заголовок соцмереж + заголовок subscribe */
