@@ -1,52 +1,41 @@
 .features-section {
-  background-color: #ffffff; /* 🔹 белый фон секции */
-  padding-top: 120px; /* 🔹 отступ сверху внутри секции */
-  padding-bottom: 120px; /* 🔹 отступ снизу внутри секции */
-}
-
-.block-title {
-  margin-bottom: 8px; /* 🔹 расстояние между заголовком и текстом */
-}
-
-.block-text {
-  color: #434455; /* 🔹 серый цвет текста */
+  background-color: #ffffff; /* фон секції */
+  padding: 120px 0; /* відступ зверху і знизу */
 }
 
 .features-list {
-  display: flex; /* 🔹 делает элементы в одну линию */
-  gap: 24px; /* 🔹 расстояние между элементами */
+  display: flex; /* ставить елементи в ряд */
+  gap: 24px; /* відстань між картками */
 }
 
 .features-item {
-  width: calc((100% - 72px) / 4); /* 🔹 4 колонки с учётом отступов */
+  width: calc((100% - 72px) / 4); /* 4 рівні колонки */
 }
+
 .features-icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 112px;
-  background-color: #f4f4fd;
-  border-radius: 4px;
-  margin-bottom: 8px;
-  border: 1px solid #8e8f99;
-}
+  display: flex; /* включає flex для центрування */
+  align-items: center; /* вертикальне центрування */
+  justify-content: center; /* горизонтальне центрування */
 
-.features-item {
-  width: calc((100% - 72px) / 4);
+  height: 112px; /* висота блоку іконки */
+  background-color: #f4f4fd; /* світлий фон */
+  border: 1px solid #8e8f99; /* рамка */
+  border-radius: 4px; /* скруглення */
+
+  margin-bottom: 8px; /* відступ до тексту */
 }
 
 .features-subtitle {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-  margin-bottom: 8px;
+  font-weight: 500; /* середня жирність */
+  font-size: 20px; /* розмір заголовка */
+  line-height: 1.2; /* висота рядка */
+  color: #2e2f42; /* темний текст */
+
+  margin-bottom: 8px; /* відступ до опису */
 }
 
 .features-desc {
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #434455;
+  font-size: 16px; /* розмір тексту */
+  line-height: 1.5; /* читабельна висота рядка */
+  color: #434455; /* сірий текст */
 }

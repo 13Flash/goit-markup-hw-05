@@ -1,93 +1,97 @@
 .modal-overlay {
-  background-color: rgba(46, 47, 66, 0.4);
-  position: fixed;
+  background-color: rgba(46, 47, 66, 0.4); /* затемнений фон */
+  position: fixed; /* фіксує на весь екран */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 999;
-  display: flex;
+
+  z-index: 999; /* поверх всього */
+  display: flex; /* центрує модалку */
   justify-content: center;
   align-items: center;
 
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transition:
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0; /* приховано */
+  pointer-events: none; /* не клікається */
+  visibility: hidden; /* не видно */
+
+  transition: opacity 250ms, visibility 250ms; /* плавність */
 }
 
 .modal-overlay.is-open {
-  opacity: 1;
-  pointer-events: auto;
-  visibility: visible;
+  opacity: 1; /* показати */
+  pointer-events: auto; /* дозволити кліки */
+  visibility: visible; /* зробити видимим */
 }
 
 .modal {
-  position: relative;
-  border-radius: 4px;
-  padding-block: 72px 24px;
-  padding-inline: 24px;
-  min-width: 408px;
-  min-height: 584px;
-  box-shadow:
-    0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 1px 3px 0 rgba(0, 0, 0, 0.12),
-    0 2px 1px 0 rgba(0, 0, 0, 0.2);
-  background: #fcfcfc;
-  overflow-y: auto;
+  position: relative; /* для кнопки закриття */
+  border-radius: 4px; /* скруглення */
+  padding-block: 72px 24px; /* вертикальні відступи */
+  padding-inline: 24px; /* горизонтальні відступи */
+
+  min-width: 408px; /* мін ширина */
+  min-height: 584px; /* мін висота */
+
+  background: #fcfcfc; /* фон модалки */
+  overflow-y: auto; /* скрол якщо треба */
+
+  box-shadow: 0 1px 1px rgba(0,0,0,0.14),
+              0 1px 3px rgba(0,0,0,0.12),
+              0 2px 1px rgba(0,0,0,0.2); /* тінь */
 }
 
+/* КНОПКА ЗАКРИТТЯ */
 .modal-close-btn {
-  position: absolute;
+  position: absolute; /* позиція всередині модалки */
   top: 24px;
   right: 24px;
+
   width: 24px;
   height: 24px;
-  border-radius: 50%;
-  background-color: #e7e9fc;
+
+  border-radius: 50%; /* кругла */
+  background-color: #e7e9fc; /* фон */
   border: 1px solid rgba(46, 47, 66, 0.4);
-  display: flex;
+
+  display: flex; /* центрування іконки */
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+
+  cursor: pointer; /* рука */
   padding: 0;
 
-  transition:
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms, border 250ms;
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-  background-color: #404bbf;
+  background-color: #404bbf; /* синій hover */
   border: none;
 }
 
 .modal-close-icon {
-  fill: #2e2f42;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #2e2f42; /* колір іконки */
+  transition: fill 250ms;
 }
 
 .modal-close-btn:hover .modal-close-icon,
 .modal-close-btn:focus .modal-close-icon {
-  fill: #ffffff;
+  fill: #ffffff; /* біла іконка при hover */
 }
 
+/* ЗАГОЛОВОК */
 .modal-title {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
+  font-weight: 500; /* середній */
   font-size: 16px;
-  line-height: 1.5;
   text-align: center;
-  letter-spacing: 0.02em;
   color: #2e2f42;
   margin-bottom: 16px;
 }
 
+/* ПОЛЯ ФОРМИ */
 .modal-field-wrapper {
-  margin-bottom: 8px;
+  margin-bottom: 8px; /* відступ між полями */
 }
 
 .comment-field-margin {
@@ -97,30 +101,30 @@
 .modal-label {
   display: block;
   font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
   color: #8e8f99;
   margin-bottom: 4px;
 }
 
+/* INPUT + ІКОНКА */
 .modal-input-wrapper {
-  position: relative;
+  position: relative; /* для іконки */
 }
 
 .modal-input {
   width: 100%;
   height: 40px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+
+  border: 1px solid rgba(46,47,66,0.4);
   border-radius: 4px;
-  background-color: transparent;
-  padding-left: 38px;
-  color: #2e2f42;
+
+  padding-left: 38px; /* місце під іконку */
   outline: transparent;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition: border-color 250ms;
 }
 
 .modal-input:focus {
-  border-color: #4d5ae5;
+  border-color: #4d5ae5; /* фокус */
 }
 
 .modal-input-icon {
@@ -128,107 +132,91 @@
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
+
   fill: #2e2f42;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input:focus + .modal-input-icon {
-  fill: #4d5ae5;
+  fill: #4d5ae5; /* зміна кольору іконки */
 }
 
+/* TEXTAREA */
 .modal-textarea {
   width: 100%;
   height: 120px;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: #2e2f42;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+
+  border: 1px solid rgba(46,47,66,0.4);
   border-radius: 4px;
-  background-color: transparent;
+
   padding: 8px 16px;
-  outline: transparent;
   resize: none;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-size: 12px;
+  color: #2e2f42;
+
+  outline: transparent;
+  transition: border-color 250ms;
 }
 
 .modal-textarea:focus {
   border-color: #4d5ae5;
 }
 
-.modal-textarea::placeholder {
-  color: rgba(46, 47, 66, 0.4);
-}
-
-.modal-checkbox-wrapper {
-  margin-bottom: 24px;
-}
-
+/* CHECKBOX */
 .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  overflow: hidden; /* ховає елемент */
 }
 
 .modal-checkbox-label {
   font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
   display: flex;
   align-items: center;
+  color: #8e8f99;
 }
 
 .modal-custom-checkbox {
   width: 16px;
   height: 16px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+
+  border: 1px solid rgba(46,47,66,0.4);
   border-radius: 2px;
-  display: inline-flex;
+
+  display: flex;
   align-items: center;
   justify-content: center;
-  fill: transparent;
+
   margin-right: 8px;
-  transition:
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition: all 250ms;
 }
 
+/* checked стан */
 .modal-checkbox:checked + .modal-checkbox-label .modal-custom-checkbox {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
 }
 
-.modal-privacy-link {
-  color: #4d5ae5;
-  text-decoration: underline;
-}
-
+/* submit */
 .modal-submit-btn {
   display: block;
+  margin: 0 auto;
+
   min-width: 169px;
   height: 56px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: #ffffff;
+
   background-color: #4d5ae5;
+  color: #ffffff;
+
   border: none;
   border-radius: 4px;
+
   cursor: pointer;
-  margin: 0 auto;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition: background-color 250ms;
 }
 
 .modal-submit-btn:hover,
