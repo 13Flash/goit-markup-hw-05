@@ -1,4 +1,4 @@
-footer {
+.footer {
   background-color: #2e2f42; /* 🔹 тёмный фон */
   color: #ffffff;
   padding: 100px 0; /* 🔹 отступ сверху/снизу */
@@ -6,24 +6,17 @@ footer {
 
 /* ===== LAYOUT ===== */
 .footer-container {
-  display: flex; /* 🔹 3 колонки */
-  align-items: flex-start; /* 🔹 сверху */
-  gap: 120px; /* 🔹 расстояние между блоками */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between; /* 🔥 головне: розставляє 3 колонки */
 }
 
+/* ===== LEFT BLOCK ===== */
 .footer-left {
   display: flex;
-  flex-direction: column; /* 🔹 логотип + текст */
+  flex-direction: column;
   gap: 16px;
   align-items: flex-start;
-}
-
-.footer-social {
-  display: flex;
-  flex-direction: column; /* 🔹 соцсети */
-  gap: 16px;
-  align-items: flex-start;
-  margin-right: 83px; /* 🔹 отступ блока */
 }
 
 /* ===== LOGO ===== */
@@ -40,7 +33,7 @@ footer {
 }
 
 .footer-logo .logo-accent {
-  color: #4d5ae5; /* 🔹 акцент */
+  color: #4d5ae5;
 }
 
 /* ===== TEXT ===== */
@@ -53,13 +46,20 @@ footer {
   margin: 0;
 }
 
-/* ===== SOCIAL ===== */
+/* ===== SOCIAL BLOCK ===== */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
 .footer-social-title,
 .subscribe-title {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  margin-bottom: 16px;
+  margin: 0 0 16px;
 }
 
 .footer-social-list {
@@ -90,7 +90,7 @@ footer {
   fill: #f4f4fd;
 }
 
-/* ===== SUBSCRIBE ===== */
+/* ===== SUBSCRIBE BLOCK ===== */
 .subscribe-form {
   display: flex;
   gap: 24px;
@@ -151,5 +151,4 @@ footer {
 .subscribe-icon {
   margin-left: 16px;
   fill: #ffffff;
-
 }
