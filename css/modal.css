@@ -1,206 +1,270 @@
+/* BACKDROP — фон затемнения */
 .modal-overlay {
-  background-color: rgba(46, 47, 66, 0.4); /* затемнений фон */
-  position: fixed; /* фіксує на весь екран */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4); /* затемнение */
+  position: fixed; /* фикс на экран */
+  top: 0; /* сверху */
+  left: 0; /* слева */
+  width: 100%; /* вся ширина */
+  height: 100%; /* вся высота */
+  z-index: 999; /* поверх всего */
 
-  z-index: 999; /* поверх всього */
-  display: flex; /* центрує модалку */
-  justify-content: center;
-  align-items: center;
+  display: flex; /* центр модалки */
+  justify-content: center; /* по горизонтали */
+  align-items: center; /* по вертикали */
 
-  opacity: 0; /* приховано */
-  pointer-events: none; /* не клікається */
+  opacity: 0; /* скрыто */
+  pointer-events: none; /* не кликается */
   visibility: hidden; /* не видно */
 
-  transition: opacity 250ms, visibility 250ms; /* плавність */
+  transition: opacity 250ms, visibility 250ms; /* плавность */
 }
 
+/* открытие модалки */
 .modal-overlay.is-open {
-  opacity: 1; /* показати */
-  pointer-events: auto; /* дозволити кліки */
-  visibility: visible; /* зробити видимим */
+  opacity: 1; /* показать */
+  pointer-events: auto; /* включить клики */
+  visibility: visible; /* сделать видимой */
 }
 
+/* ОКНО */
 .modal {
-  position: relative; /* для кнопки закриття */
-  border-radius: 4px; /* скруглення */
-  padding-block: 72px 24px; /* вертикальні відступи */
-  padding-inline: 24px; /* горизонтальні відступи */
+  position: relative; /* для кнопки close */
+  width: 408px; /* ширина */
+  min-height: 584px; /* высота минимум */
 
-  max-width: 408px; /* макс ширина */
-  min-height: 584px; /* мін висота */
+  background: #fcfcfc; /* фон */
+  border-radius: 4px; /* скругление */
 
-  background: #fcfcfc; /* фон модалки */
-  overflow-y: auto; /* скрол якщо треба */
+  padding: 72px 24px 24px; /* отступы */
 
   box-shadow: 0 1px 1px rgba(0,0,0,0.14),
               0 1px 3px rgba(0,0,0,0.12),
-              0 2px 1px rgba(0,0,0,0.2); /* тінь */
+              0 2px 1px rgba(0,0,0,0.2); /* тень */
+
+  overflow-y: auto; /* скрол если нужно */
 }
 
-/* КНОПКА ЗАКРИТТЯ */
+/* кнопка закрытия */
 .modal-close-btn {
-  position: absolute; /* позиція всередині модалки */
-  top: 24px;
-  right: 24px;
+  position: absolute; /* позиция */
+  top: 24px; /* сверху */
+  right: 24px; /* справа */
 
-  width: 24px;
-  height: 24px;
+  width: 24px; /* размер */
+  height: 24px; /* размер */
 
-  border-radius: 50%; /* кругла */
-  background-color: #e7e9fc; /* фон */
-  border: 1px solid rgba(46, 47, 66, 0.4);
-
-  display: flex; /* центрування іконки */
-  align-items: center;
+  display: flex; /* центр иконки */
   justify-content: center;
+  align-items: center;
+
+  border-radius: 50%; /* круг */
+  background-color: #e7e9fc; /* фон */
+  border: 1px solid rgba(46,47,66,0.4); /* рамка */
 
   cursor: pointer; /* рука */
-  padding: 0;
+  padding: 0; /* убрать отступ */
 
-  transition: background-color 250ms, border 250ms;
+  transition: background-color 250ms, border 250ms; /* анимация */
 }
 
+/* hover кнопки */
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-  background-color: #404bbf; /* синій hover */
-  border: none;
+  background-color: #404bbf; /* синий */
+  border: none; /* убрать рамку */
 }
 
+/* иконка close */
 .modal-close-icon {
-  fill: #2e2f42; /* колір іконки */
-  transition: fill 250ms;
+  fill: #2e2f42; /* цвет */
+  transition: fill 250ms; /* плавно */
 }
 
+/* hover иконки */
 .modal-close-btn:hover .modal-close-icon,
 .modal-close-btn:focus .modal-close-icon {
-  fill: #ffffff; /* біла іконка при hover */
+  fill: #ffffff; /* белая */
 }
 
-/* ЗАГОЛОВОК */
+/* заголовок */
 .modal-title {
-  font-weight: 500; /* середній */
-  font-size: 16px;
-  text-align: center;
-  color: #2e2f42;
-  margin-bottom: 16px;
+  font-weight: 500; /* толщина */
+  font-size: 16px; /* размер */
+  line-height: 1.5; /* высота строки */
+  text-align: center; /* центр */
+  letter-spacing: 0.02em; /* расстояние */
+
+  color: #2e2f42; /* цвет */
+
+  margin-bottom: 16px; /* отступ */
 }
 
-/* ПОЛЯ ФОРМИ */
+/* блок поля */
 .modal-field-wrapper {
-  margin-bottom: 8px; /* відступ між полями */
+  margin-bottom: 8px; /* расстояние */
 }
 
+/* комментарий поле */
 .comment-field-margin {
-  margin-bottom: 16px;
+  margin-bottom: 16px; /* больше отступ */
 }
 
+/* label */
 .modal-label {
-  display: block;
-  font-size: 12px;
-  color: #8e8f99;
-  margin-bottom: 4px;
+  display: block; /* блок */
+
+  font-size: 12px; /* текст */
+  line-height: 1.17; /* важно */
+  letter-spacing: 0.04em; /* важно */
+
+  color: #8e8f99; /* серый */
+  margin-bottom: 4px; /* отступ */
 }
 
-/* INPUT + ІКОНКА */
+/* input обертка */
 .modal-input-wrapper {
-  position: relative; /* для іконки */
+  position: relative; /* для иконки */
 }
 
+/* input */
 .modal-input {
-  width: 100%;
-  height: 40px;
+  width: 100%; /* ширина */
+  height: 40px; /* высота */
 
-  border: 1px solid rgba(46,47,66,0.4);
-  border-radius: 4px;
+  padding-left: 38px; /* место под иконку */
 
-  padding-left: 38px; /* місце під іконку */
-  outline: transparent;
+  border: 1px solid rgba(46,47,66,0.4); /* рамка */
+  border-radius: 4px; /* скругление */
 
-  transition: border-color 250ms;
+  background: transparent; /* фон */
+  outline: transparent; /* убрать outline */
+
+  transition: border-color 250ms; /* плавно */
 }
 
+/* focus input */
 .modal-input:focus {
-  border-color: #4d5ae5; /* фокус */
+  border-color: #4d5ae5; /* синий */
 }
 
+/* icon input */
 .modal-input-icon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute; /* внутри */
+  left: 16px; /* слева */
+  top: 50%; /* центр */
+  transform: translateY(-50%); /* центр */
 
-  fill: #2e2f42;
+  fill: #2e2f42; /* цвет */
+  transition: fill 250ms; /* плавно */
 }
 
+/* icon focus */
 .modal-input:focus + .modal-input-icon {
-  fill: #4d5ae5; /* зміна кольору іконки */
+  fill: #4d5ae5; /* синий */
 }
 
-/* TEXTAREA */
+/* textarea */
 .modal-textarea {
-  width: 100%;
-  height: 120px;
+  width: 100%; /* ширина */
+  height: 120px; /* высота */
 
-  border: 1px solid rgba(46,47,66,0.4);
-  border-radius: 4px;
+  padding: 8px 16px; /* внутренний отступ */
 
-  padding: 8px 16px;
-  resize: none;
+  font-size: 12px; /* текст */
+  line-height: 1.17; /* важно */
+  letter-spacing: 0.04em; /* важно */
 
-  font-size: 12px;
-  color: #2e2f42;
+  color: #2e2f42; /* цвет */
 
-  outline: transparent;
-  transition: border-color 250ms;
+  border: 1px solid rgba(46,47,66,0.4); /* рамка */
+  border-radius: 4px; /* скругление */
+
+  resize: none; /* нельзя тянуть */
+  outline: none; /* убрать outline */
+
+  transition: border-color 250ms; /* плавно */
 }
 
+/* focus textarea */
 .modal-textarea:focus {
-  border-color: #4d5ae5;
+  border-color: #4d5ae5; /* синий */
 }
 
-/* CHECKBOX */
+/* placeholder */
+.modal-textarea::placeholder {
+  color: rgba(46,47,66,0.4); /* серый */
+}
+
+/* checkbox скрытый */
 .visually-hidden {
-  position: absolute;
+  position: absolute; /* скрыть */
   width: 1px;
   height: 1px;
-  overflow: hidden; /* ховає елемент */
+  overflow: hidden;
 }
 
+/* wrapper checkbox */
+.modal-checkbox-wrapper {
+  margin-bottom: 24px; /* отступ вниз */
+}
+
+/* label checkbox */
 .modal-checkbox-label {
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  color: #8e8f99;
+  display: flex; /* в линию */
+  align-items: center; /* центр */
+
+  font-size: 12px; /* текст */
+  line-height: 1.17; /* важно */
+  letter-spacing: 0.04em; /* важно */
+
+  color: #8e8f99; /* серый */
 }
 
+/* кастом чекбокс */
 .modal-custom-checkbox {
   width: 16px;
   height: 16px;
 
-  border: 1px solid rgba(46,47,66,0.4);
-  border-radius: 2px;
+  margin-right: 8px; /* отступ */
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  margin-right: 8px;
+  border: 1px solid rgba(46,47,66,0.4); /* рамка */
+  border-radius: 2px; /* скругление */
 
-  transition: all 250ms;
+  transition:
+     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* checked стан */
+/* галочка */
+.modal-checkmark-icon {
+  opacity: 0; /* скрыта */
+  fill: #f4f4fd; /* цвет */
+  transition: opacity 250ms; /* плавно */
+}
+
+/* checked box */
 .modal-checkbox:checked + .modal-checkbox-label .modal-custom-checkbox {
-  background-color: #404bbf;
-  border: none;
-  fill: #f4f4fd;
+  background: #404bbf; /* синий */
+  border: none; /* убрать рамку */
 }
 
-/* submit */
+/* показать галочку */
+.modal-checkbox:checked + .modal-checkbox-label .modal-checkmark-icon {
+  opacity: 1; /* показать */
+}
+
+/* link */
+.modal-privacy-link {
+  color: #4d5ae5; /* синий */
+  text-decoration: underline; /* подчеркивание */
+}
+
+/* кнопка */
 .modal-submit-btn {
   display: block;
   margin: 0 auto;
@@ -208,18 +272,24 @@
   min-width: 169px;
   height: 56px;
 
-  background-color: #4d5ae5;
+  font-weight: 500; /* важно */
+  letter-spacing: 0.04em; /* важно */
+
   color: #ffffff;
+  background: #4d5ae5;
 
   border: none;
   border-radius: 4px;
 
   cursor: pointer;
 
-  transition: background-color 250ms;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.15); /* тень */
+
+  transition: background-color 250ms; /* плавно */
 }
 
+/* hover button */
 .modal-submit-btn:hover,
 .modal-submit-btn:focus {
-  background-color: #404bbf;
+  background: #404bbf; /* темнее */
 }
